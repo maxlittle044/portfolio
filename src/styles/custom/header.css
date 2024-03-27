@@ -1,0 +1,5 @@
+@layer components{
+    .site-header{
+        @apply bg-white
+    }
+}

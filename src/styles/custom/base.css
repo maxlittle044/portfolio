@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+@layer base {
+	html,
+	body {
+		@apply w-full h-full
+		;
+	}
+
+	body {
+		@apply	
+		font-poppins
+		text-[1rem]
+		2xl:text-[1.125rem]
+		leading-[1.777777777777778]
+		font-normal
+		min-w-[320px] 
+		overflow-x-hidden 
+		m-0 
+		antialiased 
+		bg-white
+		text-blue-500
+		;
+	}
+
+	picture {
+		@apply 
+		block 
+		mb-4
+		;
+	}
+
+	img {
+		@apply 
+		w-auto
+		h-auto 
+		max-w-full 
+		align-middle
+		;
+	}
+
+	h1, .h1, h2, .h2,  h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+		@apply
+		font-poppins
+		font-extrabold
+		leading-normal
+		text-blue-500
+		mb-2
+		2xl:mb-4  
+		;
+	}
+
+	h1, .h1 {
+		@apply
+		2xl:text-[3.4375rem] /*55px*/
+		lg:text-[2.25rem] 
+		text-[1.75rem] 
+		leading-[1.218181818181818]		
+		;
+	}
+
+	h2, .h2 {
+		@apply 
+		2xl:text-[2.5rem] /*40px*/
+		lg:text-[2rem] 
+		text-[1.375rem]
+		leading-normal
+		uppercase	
+		; 
+	}
+
+	h3, .h3 {
+		@apply 
+		2xl:text-[1.875rem] /*30px*/
+		lg:text-[1.5rem]
+		text-[1.375rem]
+		leading-[1.4615384615]		
+		; 
+	}
+
+	h4, .h4 {
+		@apply 
+		2xl:text-[1.5625rem] /*25px*/
+		lg:text-[1.375rem] 
+		text-[1.25rem]		
+		leading-[1.64]
+		; 
+	}
+
+	h5, .h5 {
+		@apply 
+		2xl:text-[1.375rem] /*22px*/
+		text-[1.125rem]		
+		leading-[1.590909090909091]
+		font-medium	
+		; 
+	}
+
+	h6, .h6 {
+		@apply 
+		2xl:text-[1.25rem] /*20px*/
+		text-[1rem]
+		leading-[1.6]
+		font-semibold
+		; 
+	}
+
+	.site-wrapper {
+		@apply 
+		relative 
+		overflow-hidden 
+		my-0 
+		mx-auto 
+		flex 
+		items-stretch 
+		flex-col 
+		min-h-full
+		;
+	}
+
+	.site-content {
+		@apply 
+		grow
+		;
+	}
+
+	.site-header,
+	.site-content,
+	.site-footer {
+		@apply
+		shrink-0
+		;
+	}
+
+	.container {
+		@apply 
+		pl-4 
+		pr-4
+		;
+	}
+
+	p {
+		@apply
+		mb-2
+		2xl:mb-4
+
+		[&_strong]:text-blue-500
+		[&_strong]:font-semibold
+		2xl:[&_strong]:text-[1.25rem]
+		2xl:[&_strong]:leading-[1.85]
+		;
+	}
+
+	a {
+		@apply 
+		text-purple-700		
+		transition-all
+		hover:text-purple-700
+		;
+	}
+
+	hr {
+		@apply 
+		my-2.5
+		;
+	}
+}
