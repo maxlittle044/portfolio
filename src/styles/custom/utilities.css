@@ -1,0 +1,11 @@
+@layer utilities {
+    .border-facebook {
+        border-image: linear-gradient(to right, #0165E1, #17A9FD);
+        border-image-slice: 1;
+    }
+
+    .border-instagram {
+        border-image: linear-gradient(to right, #833AB4, #C13584);
+        border-image-slice: 1;
+    }
+}

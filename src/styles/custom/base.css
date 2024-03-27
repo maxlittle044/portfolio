@@ -164,4 +164,13 @@
 		my-2.5
 		;
 	}
+
+	.socialBtn {
+		@apply flex items-center justify-center h-12 w-12 shadow-lg bg-transparent rounded-full transition-all 
+		duration-[.4s] hover:text-white
+	}
+
+	.socialBtn svg {
+		@apply  transition-[transform] duration-[.4s] ease-linear
+	}
 }
