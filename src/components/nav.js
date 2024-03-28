@@ -1,13 +1,14 @@
+import { Link } from 'gatsby';
 import React from 'react'
 
 const Nav = () => {
   return (
 
-    <nav class="flex flex-wrap items-center justify-between p-4 bg-white">
+    <nav class="flex flex-wrap items-center justify-between bg-white">
       <div class="w-auto lg:order-2 lg:w-1/5 lg:text-center">
-        <a class="text-xl font-semibold text-gray-800 font-heading" href="#">
+        <Link to='/' class="text-xl font-semibold text-gray-800 font-heading">
           Gajendra Sah
-        </a>
+        </Link>
       </div>
       <div class="block lg:hidden">
         <button class="flex items-center px-3 py-2 text-indigo-500 border border-indigo-500 rounded navbar-burger">
@@ -21,26 +22,26 @@ const Nav = () => {
         </button>
       </div>
       <div class="hidden w-full navbar-menu lg:order-1 lg:block lg:w-2/5">
-        <a class="block mt-4 mr-10 text-blue-900 lg:inline-block lg:mt-0 hover:text-indigo-600" href="#">
+        <Link class="block mt-4 mr-10 text-blue-900 lg:inline-block lg:mt-0 hover:text-indigo-600" to="/">
           Home
-        </a>
-        <a class="block mt-4 mr-10 text-blue-900 lg:inline-block lg:mt-0 hover:text-indigo-600" href="#">
+        </Link>
+        <Link class="block mt-4 mr-10 text-blue-900 lg:inline-block lg:mt-0 hover:text-indigo-600" to="#">
           Team
-        </a>
-        <a class="block mt-4 text-blue-900 lg:inline-block lg:mt-0 hover:text-indigo-600" href="#">
+        </Link>
+        <Link class="block mt-4 text-blue-900 lg:inline-block lg:mt-0 hover:text-indigo-600" to="#">
           Galery
-        </a>
+        </Link>
       </div>
       <div class="hidden w-full navbar-menu lg:order-3 lg:block lg:w-2/5 lg:text-right">
-        <a class="block mt-4 mr-10 text-blue-900 lg:inline-block lg:mt-0 hover:text-indigo-600" href="#">
+        <Link class="block mt-4 mr-10 text-blue-900 lg:inline-block lg:mt-0 hover:text-indigo-600" to="#">
           Content
-        </a>
-        <a class="block mt-4 mr-10 text-blue-900 lg:inline-block lg:mt-0 hover:text-indigo-600" href="#">
+        </Link>
+        <Link class="block mt-4 mr-10 text-blue-900 lg:inline-block lg:mt-0 hover:text-indigo-600" to="#">
           FAQ
-        </a>
-        <a class="block mt-4 text-blue-900 lg:inline-block lg:mt-0 hover:text-indigo-600" href="#">
+        </Link>
+        <Link class="block mt-4 text-blue-900 lg:inline-block lg:mt-0 hover:text-indigo-600" to="#">
           Contact
-        </a>
+        </Link>
       </div>
     </nav>
   );

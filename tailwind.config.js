@@ -13,6 +13,7 @@ module.exports = {
     extend: {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
+        DM_Sans: ['DM Sans', 'sans-serif']
       },
 
       screens: {
@@ -21,6 +22,9 @@ module.exports = {
         'xl': '1140px',
         '2xl': '1310px',
       },
+      colors: {
+        'dark-blue-100': '#44566c',
+      }
     },
   },
   plugins: [],

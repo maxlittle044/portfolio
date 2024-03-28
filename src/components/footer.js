@@ -1,5 +1,6 @@
 import React from 'react'
 import CardSocial from './card/card-social';
+import { Link } from 'gatsby';
 
 const Footer = () => {
     return (
@@ -7,27 +8,27 @@ const Footer = () => {
             <div className="container">
                 <ul class="flex flex-wrap justify-between max-w-screen-md mx-auto text-lg font-light">
                     <li class="my-2">
-                        <a class="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" href="#">
+                        <Link class="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" href="#">
                             FAQ
-                        </a>
+                        </Link>
                     </li>
                     <li class="my-2">
-                        <a class="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" href="#">
+                        <Link class="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" href="#">
                             Configuration
-                        </a>
+                        </Link>
                     </li>
                     <li class="my-2">
-                        <a class="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" href="#">
+                        <Link class="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" href="#">
                             Github
-                        </a>
+                        </Link>
                     </li>
                     <li class="my-2">
-                        <a class="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" href="#">
+                        <Link class="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" href="#">
                             LinkedIn
-                        </a>
+                        </Link>
                     </li>
                 </ul>
-                <div class="pt-8 flex max-w-xs mx-auto items-center justify-between">
+                <div class="pt-8 flex max-w-xs mx-auto items-center justify-center">
                     <CardSocial
                         facebook
                         linkedIn
