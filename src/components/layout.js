@@ -6,6 +6,7 @@ import Footer from './footer';
 const Layout = ({ pageClass, children }) => {
 
     const [headerHeight, setHeaderHeight] = useState(0);
+
     const calculateHeaderHeight = () => {
         const header = document.querySelector('header');
         if (header) {
