@@ -1,6 +1,9 @@
 @media (max-width:991.98px) {
     nav {
-        background: #000101;
+        background: linear-gradient(to left, #833AB4, #C13584);
+        background: #0F2027;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         bottom: 0;
         font-size: 1.5rem;
         height: 100vh;
@@ -13,9 +16,58 @@
         transform: translateX(100%);
         transition: all .6s;
         width: 100%;
+        display: flex;
+        flex-direction: column;
     }
 
-    nav.active{
+    nav.active {
         transform: translateX(0);
     }
+
+    .navbar-menu svg .line1,
+    .navbar-menu svg .line3 {
+        /* stroke-dasharray: 60 207; */
+        stroke-dasharray: 30 104;
+    }
+
+    .navbar-menu svg .line2 {
+        /* stroke-dasharray: 60 60; */
+        stroke-dasharray: 30 30;
+    }
+
+    .navbar-menu.active .line1,
+    .navbar-menu.active .line3 {
+        /* stroke-dasharray: 90 207;
+        stroke-dashoffset: -134; */
+        stroke-dasharray: 45 104;
+        stroke-dashoffset: -67;
+    }
+
+    .navbar-menu.active .line2 {
+        /* stroke-dasharray: 1 60;
+        stroke-dashoffset: -30; */
+        stroke-dasharray: 1 30;
+        stroke-dashoffset: -30;
+    }
+}
+
+.banner {
+    @apply
+    relative
+    bg-cover;
+}
+
+.gradient-primary:before {
+    @apply 
+    absolute
+    content-['']
+    top-0
+    left-0
+    right-0
+    bottom-0
+    bg-gradient-to-r
+    from-[rgba(6,32,87,1)]
+    to-[rgba(203,43,220,1)]
+    -z-10
+    opacity-80
 }

@@ -9,7 +9,6 @@
     transition-all
     ease-in-out
     duration-500
-
     xl:py-6
 
     [&.stickyHeader]:bg-white
@@ -87,83 +86,10 @@
     font-bold;
 }
 
-.site-header .navlists-toggler {
-    @apply 
-    h-[23px]
-    w-[30px]
-    flex
-    flex-wrap
-    gap-1
-
-    xl:hidden
-
-    [&_span]:block
-    [&_span]:h-[3px]
-    [&_span]:w-full
-    [&_span]:bg-white
-    [&_span]:rounded-md
-    [&_span]:transition-all
-    [&_span]:ease-in-out
-    [&_span]:duration-200
-    ;
+.site-header .navbar-menu svg .line {
+    @apply fill-none stroke-black stroke-[2] [transition:stroke-dasharray_600ms_cubic-bezier(.4,0,.2,1),stroke-dashoffset_600ms_cubic-bezier(.4,0,.2,1)];
 }
 
-.site-header .navlists-toggler.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.site-header .navlists-toggler.active span:first-child {
-    @apply
-    rotate-45
-    translate-y-[9px]
-    ;
-}
-
-.site-header .navlists-toggler.active span:nth-child(3) {
-    @apply
-    -rotate-45
-    -translate-y-[9px]
-    ;
-}
-
-.stickyHeader .navlists-toggler {
-    @apply
-    [&_span]:bg-purple-700
-}
-
-.stickyHeader {
-    @apply
-    xl:[&_.nav-link]:text-purple-700
-
-    xl:[&_.nav-link:hover]:text-purple-700
-
-    xl:[&_.nav-link]:before:bg-purple-700
-
-    xl:[&_.btn]:border-purple-700
-
-    xl:[&_.social-media>li>a]:border-purple-700
-    xl:[&_.social-media>li>a]:text-purple-700
-    ;
-}
-
-
-.banner {
-    @apply
-    relative
-    bg-cover;
-}
-
-.gradient-primary:before {
-    @apply 
-    absolute
-    content-['']
-    top-0
-    left-0
-    right-0
-    bottom-0
-    bg-gradient-to-r
-    from-[rgba(6,32,87,1)]
-    to-[rgba(203,43,220,1)]
-    -z-10
-    opacity-80
+.site-header .navbar-menu.active svg .line{
+    @apply stroke-white
 }
