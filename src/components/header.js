@@ -1,39 +1,70 @@
-import React, { useContext, useRef, useEffect } from 'react'
+import React, { useContext, useRef, useEffect, useState } from 'react'
 import Nav from './nav';
 import { Context } from "../redux/store";
 import { Link } from 'gatsby';
+import useDeviceSize from '../hooks/use-device-size';
 
 function Header() {
+    const deviceSizes = useDeviceSize();
     const { state, dispatch } = useContext(Context);
     const headerRef = useRef(null);
+    const [isSticky, setIsSticky] = useState(false);
 
     const handleHamburgerClick = () => {
         dispatch({ type: 'SET_MOBILE_MENU', payload: !state.hamburgerOpen })
     }
 
     useEffect(() => {
-        if (state.hamburgerOpen) {
-            const headerHeight = headerRef.current.offsetHeight;
-            document.getElementById('nav').style.paddingTop = `${headerHeight}px`;
-        } else {
-            document.getElementById('nav').style.paddingTop = '0px';
-        }
-    }, [state.hamburgerOpen]);
+        const handleResize = () => {
+            if (deviceSizes.mdDown && state.hamburgerOpen) {
+                const headerHeight = headerRef.current.offsetHeight;
+                document.getElementById('nav').style.paddingTop = `${headerHeight}px`;
+            } else {
+                document.getElementById('nav').style.paddingTop = '0px';
+            }
+        };
+
+        const handleScroll = () => {
+            const offset = window.scrollY;
+            if (offset > 0) {
+                setIsSticky(true);
+            } else {
+                setIsSticky(false);
+            }
+        };
+
+        handleResize();
+        handleScroll();
+
+        const resizeListener = () => {
+            handleResize();
+        };
+        const scrollListener = () => {
+            handleScroll();
+        };
+
+        window.addEventListener('resize', resizeListener);
+        window.addEventListener('scroll', scrollListener);
+
+        return () => {
+            window.removeEventListener('resize', resizeListener);
+            window.removeEventListener('scroll', scrollListener);
+        };
+    }, [state.hamburgerOpen, deviceSizes.mdDown, headerRef]);
 
     return (
-        <header className={`site-header ${state.hamburgerOpen ? 'show-navbar' : ''}`} ref={headerRef}>
+        <header className={`site-header ${isSticky ? 'stickyHeader' : ''} ${state.hamburgerOpen ? 'show-navbar' : ''}`} ref={deviceSizes.mdDown ? headerRef : null}>
             <div className="container">
                 <div className="site-header__content relative z-[999] flex flex-wrap items-center justify-between lg:hidden">
                     <div className="site-header__logo">
-                        <Link to='/' className="text-xl font-semibold text-gray-800 font-heading">
+                        <Link to='/' className="text-xl font-semibold text-gray-700 font-heading">
                             Gajendra Sah
                         </Link>
                     </div>
                     <div className="site-header__menu">
                         <button
                             onClick={handleHamburgerClick}
-                            className={`flex items-center p-1 rounded-full border-2 border-t-black border-r-black border-b-black border-l-black menu navbar-menu transition-all duration-500
-                            ${state.hamburgerOpen ? 'active border-t-white border-r-white border-b-white border-l-white' : ''}`}
+                            className={`flex items-center p-1 rounded-full border-2 border-t-black border-r-black border-b-black border-l-black menu navbar-menu transition-all duration-900 ease-in-out outline-0 ${state.hamburgerOpen ? 'active border-t-white border-r-white border-b-white border-l-white' : ''}`}
                             aria-label="Main Menu"
                         >
                             {/* <svg width="100" height="100" viewBox="0 0 100 100">

@@ -1,26 +1,28 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useCallback } from 'react';
 import { useLocation } from '@reach/router';
 import { Context } from "../redux/store";
 import { Link } from 'gatsby';
 import CardSocial from './card/card-social';
+import useDeviceSize from '../hooks/use-device-size';
 
 function Nav() {
-  const location = useLocation()
+  const location = useLocation();
+  const deviceSizes = useDeviceSize();
   const { dispatch, state } = useContext(Context);
 
-  const handlCloseMenu = () => {
+  const handlCloseMenu = useCallback(() => {
     dispatch({ type: 'SET_MOBILE_MENU', payload: false })
-  }
+  }, [dispatch]);
 
   useEffect(() => {
     handlCloseMenu();
-  }, [location.href])
+  }, [location.href, handlCloseMenu]);
 
   return (
-    <nav id="nav" className={`[transition:all_.3s] w-full lg:relative lg:flex lg:flex-wrap lg:items-center lg:justify-between navbar-nav ${state.hamburgerOpen ? 'active' : ''}`}>
+    <nav id="nav" className={`[transition:all_0.6s_ease-in-out] w-full lg:relative lg:flex lg:flex-wrap lg:items-center lg:justify-between navbar-nav ${state.hamburgerOpen ? 'active' : ''}`}>
       <div className="w-auto lg:order-2 lg:w-1/5 lg:text-center">
         <div className="hidden lg:block">
-          <Link to='/' className="text-xl font-semibold text-gray-800 font-heading">
+          <Link to='/' className="text-xl font-semibold text-gray-700 font-heading">
             Gajendra Sah
           </Link>
         </div>
@@ -28,27 +30,49 @@ function Nav() {
       </div>
 
       <div className={`px-[1rem] w-full sm:max-w-screen-sm md:max-w-screen-md sm:mx-auto lg:max-w-none navbar-menu lg:order-1 lg:px-0 lg:block lg:w-2/5 `}>
-        <Link className="block mt-4 mr-10 text-white lg:text-blue-900 lg:inline-block lg:mt-0 hover:text-indigo-600" to="/">
-          Home
-        </Link>
-        <Link className="block mt-4 mr-10 text-white lg:text-blue-900 lg:inline-block lg:mt-0 hover:text-indigo-600" to="#">
-          Team
-        </Link>
-        <Link className="block mt-4 text-white lg:text-blue-900 lg:inline-block lg:mt-0 hover:text-indigo-600" to="#">
-          Galery
-        </Link>
+        <ul className='flex flex-col lg:items-center lg:flex-row'>
+          <li className={`mt-4 lg:mr-10 list-none lg:mt-0 lg:text-xl ${deviceSizes.mdDown ? state.hamburgerOpen ? 'slide-in-1' : 'slide-out-1' : ''}`}>
+            <Link className="text-white lg:text-blue-900 hover:text-indigo-600" to="/">
+              Home
+            </Link>
+          </li>
+
+          <li className={`mt-4 lg:mr-10 list-none lg:mt-0 lg:text-xl ${deviceSizes.mdDown ? state.hamburgerOpen ? 'slide-in-2' : 'slide-out-2' : ''}`}>
+            <Link className="text-white lg:text-blue-900 hover:text-indigo-600" to="#">
+              Team
+            </Link>
+          </li>
+
+          <li className={`mt-4 lg:mt-0 list-none lg:text-xl ${deviceSizes.mdDown ? state.hamburgerOpen ? 'slide-in-3' : 'slide-out-3' : ''}`}>
+            <Link className="text-white lg:text-blue-900 hover:text-indigo-600" to="#">
+              Galery
+            </Link>
+          </li>
+        </ul>
       </div>
-      <div className={`px-[1rem] w-full sm:max-w-screen-sm md:max-w-screen-md sm:mx-auto lg:max-w-none navbar-menu lg:order-3 lg:px-0 lg:block lg:w-2/5 lg:text-right `}>
-        <Link className="block mt-4 mr-10 text-white lg:text-blue-900 lg:inline-block lg:mt-0 hover:text-indigo-600" to="#">
-          Content
-        </Link>
-        <Link className="block mt-4 mr-10 text-white lg:text-blue-900 lg:inline-block lg:mt-0 hover:text-indigo-600" to="#">
-          FAQ
-        </Link>
-        <Link className="block mt-4 text-white lg:text-blue-900 lg:inline-block lg:mt-0 hover:text-indigo-600" to="#">
-          Contact
-        </Link>
+
+      <div className={`px-[1rem] w-full sm:max-w-screen-sm md:max-w-screen-md sm:mx-auto lg:max-w-none navbar-menu lg:order-3 lg:px-0 lg:block lg:w-2/5 lg:text-right`}>
+        <ul className='flex flex-col lg:items-center lg:flex-row lg:justify-end'>
+          <li className={`mt-4 lg:mr-10 list-none lg:mt-0 lg:text-xl ${deviceSizes.mdDown ? state.hamburgerOpen ? 'slide-in-4' : 'slide-out-4' : ''}`}>
+            <Link className="text-white lg:text-blue-900 hover:text-indigo-600" to="#">
+              Content
+            </Link>
+          </li>
+
+          <li className={`mt-4 lg:mr-10 list-none lg:mt-0 lg:text-xl ${deviceSizes.mdDown ? state.hamburgerOpen ? 'slide-in-5' : 'slide-out-5' : ''}`}>
+            <Link className="text-white lg:text-blue-900 hover:text-indigo-600" to="#">
+              FAQ
+            </Link>
+          </li>
+
+          <li className={`mt-4 lg:mt-0 list-none lg:text-xl ${deviceSizes.mdDown ? state.hamburgerOpen ? 'slide-in-6' : 'slide-out-6' : ''}`}>
+            <Link className="text-white lg:text-blue-900 hover:text-indigo-600" to="#">
+              Contact
+            </Link>
+          </li>
+        </ul>
       </div>
+
       <div className={`mt-auto pb-8 px-[1rem] w-full navbar-menu lg:hidden `}>
         <div className="pt-8 flex max-w-xs mx-auto items-center justify-center">
           <CardSocial

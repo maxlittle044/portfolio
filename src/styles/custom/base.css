@@ -119,6 +119,6 @@
 	}
 
 	.socialBtn svg {
-		@apply transition-[transform] duration-[.4s] ease-linear;
+		@apply transition-[transform] duration-[.4s] ease-in-out;
 	}
 }

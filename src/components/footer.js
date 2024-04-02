@@ -8,22 +8,22 @@ const Footer = () => {
             <div className="container">
                 <ul className="flex flex-wrap justify-between max-w-screen-md mx-auto text-lg font-light">
                     <li className="my-2">
-                        <Link className="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" href="#">
+                        <Link className="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" to="#">
                             FAQ
                         </Link>
                     </li>
                     <li className="my-2">
-                        <Link className="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" href="#">
+                        <Link className="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" to="#">
                             Configuration
                         </Link>
                     </li>
                     <li className="my-2">
-                        <Link className="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" href="#">
+                        <Link className="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" to="#">
                             Github
                         </Link>
                     </li>
                     <li className="my-2">
-                        <Link className="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" href="#">
+                        <Link className="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" to="#">
                             LinkedIn
                         </Link>
                     </li>

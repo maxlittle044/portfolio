@@ -15,6 +15,12 @@ const IndexPage = () => {
         <h6>Heading 6</h6>
         <p> <strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</strong> Accusantium deserunt ab iusto ad obcaecati! Illum repellendus voluptatem ullam iure doloribus, excepturi ratione, necessitatibus fuga natus amet exercitationem a consequuntur ad.</p>
       </div>
+
+      <section className="banner py-4">
+        <div className="container">
+
+        </div>
+      </section>
       {/* <div className="container">
         <CardSocial
           facebook
