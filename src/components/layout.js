@@ -1,15 +1,17 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useContext } from 'react';
 import Header from './header';
 import Footer from './footer';
+import { Context } from '../redux/store';
 // import '../styles/global.css'
 
 const Layout = ({ pageClass, children }) => {
-    const [headerHeight, setHeaderHeight] = useState(0);
+
+    const { state, dispatch } = useContext(Context);
 
     const calculateHeaderHeight = useCallback(() => {
         const header = document.querySelector('header');
         if (header) {
-            setHeaderHeight(header.offsetHeight);
+            dispatch({ type: "SET_HEADER_HEIGHT", payload: header.offsetHeight })
         }
     }, []);
 
@@ -27,14 +29,11 @@ const Layout = ({ pageClass, children }) => {
         };
     }, [calculateHeaderHeight]);
 
-    const siteContentStyle = {
-        paddingTop: `${headerHeight}px`
-    };
 
     return (
         <div className={`site-wrapper ${pageClass}`}>
             <Header />
-            <main className='site-content' style={siteContentStyle}>
+            <main className='site-content'>
                 {children}
             </main>
             <Footer />

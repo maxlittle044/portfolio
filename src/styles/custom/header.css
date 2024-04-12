@@ -13,6 +13,7 @@
         ease-in-out
         duration-500
         xl:py-6
+        bg-white
 
         [&.stickyHeader]:bg-white
         [&.stickyHeader]:py-4
@@ -76,9 +77,15 @@
             stroke-dashoffset: -67;
         }
 
-        /* .site-header .navbar-menu.active .line3{
+        .site-header .navbar-menu.active .line1{
+            stroke-dashoffset: -68;
+            /* offset-path: ray(91deg); */
+            
+        }
+
+        .site-header .navbar-menu.active .line3{
             stroke-dashoffset: -70;
-        } */
+        }
     
         .site-header .navbar-menu.active .line2 {
             /* stroke-dasharray: 1 60;

@@ -36,7 +36,7 @@
 
 	h1,
 	.h1 {
-		@apply text-[2rem] sm:text-[2.5rem] md:text-[3rem] xl:text-[3.5rem] 2xl:text-[4rem] leading-[1.125];
+		@apply text-[2.25rem] sm:text-[2.5rem] md:text-[3rem] xl:text-[3.5rem] 2xl:text-[4rem] leading-[1.125];
 	}
 
 	h2,

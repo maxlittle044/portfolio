@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useEffect, useState } from 'react'
+import React, { useContext, useRef, useEffect, useState } from 'react';
 import Nav from './nav';
 import { Context } from "../redux/store";
 import { Link } from 'gatsby';
