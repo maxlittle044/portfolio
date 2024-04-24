@@ -112,65 +112,23 @@
         }
     }
 
-    .glow {
-        z-index: -1;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        background-image: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.025), transparent);
+    .circles li {
+        @apply absolute list-none rounded-[80px] bg-white/10 border -bottom-8 border-white/15 [box-shadow:0_8px_32px_0_rgba(31,_38,_135,_0.2)] backdrop-filter backdrop-blur-[10px] animate-[animate_25s_linear_infinite];
     }
 
-    .glow-1 {
-        width: 150vw;
-        height: 150vh;
-        margin-top: -75vh;
-        margin-left: -75vw;
-        animation: glow-1-move 25s linear infinite both;
-    }
+    @keyframes animate {
 
-    @keyframes glow-1-move {
-        from {
-            transform: translate(-100%, 100%);
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+            border-radius: 0;
         }
 
-        to {
-            transform: translate(100%, -100%);
-        }
-    }
-
-    .glow-2 {
-        width: 100vw;
-        height: 100vh;
-        margin-top: -50vh;
-        margin-left: -50vw;
-        animation: glow-2-move 25s linear 25s / 3 infinite both;
-    }
-
-    @keyframes glow-2-move {
-        from {
-            transform: translate(-100%, 0%);
+        100% {
+            transform: translateY(-540px) rotate(720deg);
+            opacity: 0;
+            border-radius: 50%;
         }
 
-        to {
-            transform: translate(100%, 100%);
-        }
-    }
-
-    .glow-3 {
-        width: 120vw;
-        height: 120vh;
-        margin-top: -60vh;
-        margin-left: -60vw;
-        animation: glow-3-move 25s linear 25s / 3 * 2 infinite both;
-    }
-
-    @keyframes glow-3-move {
-        from {
-            transform: translate(100%, 100%);
-        }
-
-        to {
-            transform: translate(0%, -100%);
-        }
     }
 }

@@ -20,8 +20,8 @@ function Nav() {
 
   return (
     <nav id="nav" className={`[transition:all_0.6s_ease-in-out] w-full lg:relative lg:flex lg:flex-wrap lg:items-center lg:justify-between navbar-nav ${state.hamburgerOpen ? 'active' : ''}`}>
-      <div className="w-auto lg:order-2 lg:w-1/5 lg:text-center">
-        <div className="hidden lg:block">
+      <div className="hidden w-auto lg:order-2 lg:w-1/5 lg:text-center lg:block">
+        <div className="site-header__logo">
           <Link to='/' className="text-xl font-semibold text-gray-700 font-heading">
             Gajendra Sah
           </Link>

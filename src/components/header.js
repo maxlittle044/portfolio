@@ -57,7 +57,7 @@ function Header() {
             <div className="container">
                 <div className="site-header__content relative z-[999] flex flex-wrap items-center justify-between lg:hidden">
                     <div className="site-header__logo">
-                        <Link to='/' className="text-xl font-semibold text-gray-700 font-heading">
+                        <Link to='/' className={`text-xl font-semibold text-gray-700 font-heading transition-all duration-[.6s] ${state.hamburgerOpen ? 'text-white' : ''}`}>
                             Gajendra Sah
                         </Link>
                     </div>

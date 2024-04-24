@@ -4,7 +4,7 @@ const BubbleParticles =
     (
     ) => {
         return (
-            <div className="particles h-full absolute right-[10px] left-[10px]">
+            <div className="particles bottom-0 h-full absolute w-full">
                 <div className="particle h-[25px] w-[25px] top-[65%] left-[10%] animate-[floating_28s_linear] [animation-iteration-count: infinite]"></div>
 
                 <div className="particle h-[12px] w-[12px] top-[15%] left-[33%] animate-[floating_35s_linear] [animation-iteration-count: infinite]"></div>
