@@ -177,7 +177,7 @@ const CanvasParticle = () => {
     };
 
     return (
-        <div ref={containerRef} className="particle-network-animation absolute top-0 left-0 right-0 bottom-0 h-full z-10">
+        <div ref={containerRef} className="particle-network-animation absolute inset-0 h-full z-10">
             <canvas ref={canvasRef} className='h-full'></canvas>
         </div>
     );

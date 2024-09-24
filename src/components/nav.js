@@ -39,7 +39,7 @@ function Nav() {
 
           <li className={`mt-4 lg:mr-10 list-none lg:mt-0 lg:text-xl ${deviceSizes.mdDown ? state.hamburgerOpen ? 'slide-in-2' : 'slide-out-2' : ''}`}>
             <Link className="text-white lg:text-blue-900 hover:text-indigo-600" to="#">
-              Team
+              About Me
             </Link>
           </li>
 

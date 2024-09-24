@@ -5,12 +5,13 @@ import Layout from "../components/layout";
 import CanvasParticle from "../components/particles/canvasParticle";
 import BubbleParticles from "../components/particles/bubbleParticles";
 import { Context } from "../redux/store";
-import ElectricWizardParticle from "../components/particles/electricWizardParticle";
-import CardIcon from "../components/card/cardIcon";
+// import ElectricWizardParticle from "../components/particles/electricWizardParticle";
+// import CardIcon from "../components/card/cardIcon";
 import GlassmorphismSquareParticle from "../components/particles/glassmorphismSquareParticles";
+// import ParticleTextAnimation from "../components/particleTextAnimation";
 // import CardSocial from "../components/card/card-social";
 
-const allAnimation = [CanvasParticle, BubbleParticles, ElectricWizardParticle, GlassmorphismSquareParticle]
+const allAnimation = [CanvasParticle, BubbleParticles,  GlassmorphismSquareParticle]
 
 const IndexPage = () => {
 
@@ -34,6 +35,7 @@ const IndexPage = () => {
       >
         <Animation />
 
+
         <div className="container">
           <div className="relative py-12 md:py-14 lg:py-16 2xl:pt-[7.9375rem] 2xl:pb-[6.9375rem]">
             <div className="max-w-[50rem] 2xl:max-w-[62rem] [&_p]:mb-3 [&_p_a]:underline [&_p_a:hover]:no-underline [&_a:not(.btn)]:text-white hover:[&_a:not(.btn)]:underline hover:[&_a:not(.btn)]:opacity-80">
@@ -49,6 +51,8 @@ const IndexPage = () => {
         </div>
       </section>
 
+
+
       <div className="container">
         <h1>Heading 1</h1>
         <h2>Heading 2</h2>
@@ -57,11 +61,9 @@ const IndexPage = () => {
         <h5>Heading 5</h5>
         <h6>Heading 6</h6>
         <p> <strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</strong> Accusantium deserunt ab iusto ad obcaecati! Illum repellendus voluptatem ullam iure doloribus, excepturi ratione, necessitatibus fuga natus amet exercitationem a consequuntur ad.</p>
-        <div className="flex flex-wrap justify-center -mx-4 mb-4 md:mb-6">
-          <div className="flex-[0_0_auto] w-full sm:w-1/2 lg:w-1/3 px-4">
-            <CardIcon />
-          </div>
-        </div>
+        
+        {/* <ParticleTextAnimation /> */}
+
       </div>
 
       {/* <div className="container">

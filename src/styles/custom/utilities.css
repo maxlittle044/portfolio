@@ -113,7 +113,7 @@
     }
 
     .circles li {
-        @apply absolute list-none rounded-[80px] bg-white/10 border -bottom-8 border-white/15 [box-shadow:0_8px_32px_0_rgba(31,_38,_135,_0.2)] backdrop-filter backdrop-blur-[10px] animate-[animate_25s_linear_infinite];
+        @apply absolute list-none rounded-[80px] bg-white/10 border -bottom-32 border-white/15 [box-shadow:0_8px_32px_0_rgba(31,_38,_135,_0.2)] backdrop-filter backdrop-blur-[10px] animate-[animate_25s_linear_infinite];
     }
 
     @keyframes animate {
