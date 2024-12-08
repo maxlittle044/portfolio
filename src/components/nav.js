@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useCallback } from 'react';
 import { useLocation } from '@reach/router';
 import { Context } from "../redux/store";
 import { Link } from 'gatsby';
-import CardSocial from './card/card-social';
+import CardSocial from './card/cardSocial';
 import useDeviceSize from '../hooks/use-device-size';
 
 function Nav() {

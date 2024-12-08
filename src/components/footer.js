@@ -1,5 +1,5 @@
 import React from 'react'
-import CardSocial from './card/card-social';
+import CardSocial from './card/cardSocial';
 import { Link } from 'gatsby';
 
 const Footer = () => {
